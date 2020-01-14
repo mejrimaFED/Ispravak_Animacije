@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+body {
+    background: #050210;
+}
+
+.centar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.outer-ring {
+margin-left: auto;
+margin-right: auto;
+margin-top: 50px;
+height: 485px;
+width: 485px;
+border-radius: 50%;
+background-image: linear-gradient(#e091b9 0%, #55fb9f 33%, #b97aff 66%, #fb5dad 100%);
+animation: rotate 0.5s linear infinite, glow 1s linear infinite;
+z-index: 3; 
+}
+
+.inner-ring {
+position: absolute;
+margin-left: 510px;
+margin-top: 40px;
+height: 400px;
+width: 400px;
+border-radius: 50%;
+transform: translateY(450px);
+background-color: #050210;
+animation-name: pulse;
+animation-duration: 1.2s;
+animation-iteration-count: infinite;
+animation-timing-function:ease-out;z-index: 2;
+}
+
+.middle-ring {
+position: absolute;
+margin-left: 485px;
+margin-top: -440px;
+height: 460px;
+width: 460px;
+border-radius: 50%;
+transform: translateY(450px);
+background-color: black;
+z-index: 1;
+}
+
+
+@keyframes rotate {
+    0% 
+    {
+      transform:rotate(0deg);
+      }
+    100% 
+    {
+      transform:rotate(360deg);
+      }
+}
+
+@keyframes glow {
+  0% { 
+      box-shadow:0 0 250px #e091b9; 
+      }
+  25% { 
+      box-shadow:0 0 250px #55fb9f; 
+      }
+  50% {
+       box-shadow:0 0 250px #b97aff; 
+       }
+    100% {
+       box-shadow:0 0 250px #ea4c89; 
+       }
+}
+
+@keyframes pulse {
+0% {
+        transform: scale(0.01);
+        box-shadow: 0 0 0 0 rgba(143, 138, 138, 0.7);
+        background-color: #151313;
+    }
+100% {
+        transform: scale(0.99);
+        box-shadow: 0 0 0 0 rgba(143, 138, 138, 0.7);
+    }
+}
+
+</style>
+
+</head>
+<body>
+    <div class="inner-ring centar"></div>
+    <div class="middle-ring centar"></div>
+    <div class="outer-ring centar"></div>
+    
+</body>
+</html>
